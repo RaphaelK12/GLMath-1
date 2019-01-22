@@ -18,6 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GLMath.cpp" />
+    <ClCompile Include="GLMatrix.cpp" />
+    <ClCompile Include="GLVector.cpp" />
+    <ClCompile Include="test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GLMath.h" />
+    <ClInclude Include="GLMatrix.h" />
+    <ClInclude Include="GLVector.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{92D72988-59BC-46B1-84B0-919BD29AFFA7}</ProjectGuid>
@@ -117,16 +128,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="GLMath.h" />
-    <ClInclude Include="GLMatrix.h" />
-    <ClInclude Include="GLVector.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="GLMath.cpp" />
-    <ClCompile Include="GLMatrix.cpp" />
-    <ClCompile Include="GLVector.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
