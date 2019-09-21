@@ -11,11 +11,11 @@ namespace glmath {
 
 	//===================== Namespace Functions =============================
 
-	double rad(double degrees);
-	double deg(double radians);
+	float rad(float degrees);
+	float deg(float radians);
 
 	float fovy(float fovx, float aspect = 16.0f / 9.0f);
 
-	std::string centered(const float &value, const int &size);
+	std::string centered(float value, unsigned int size);
 
 }

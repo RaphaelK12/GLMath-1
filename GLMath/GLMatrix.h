@@ -70,8 +70,8 @@ namespace glmath {
 
 	mat4 transpose(const mat4 * src, mat4 * dest);
 
-	mat4 perspective(float width, float height, float fov, bool rightHanded);
-	mat4 perspective(float width, float height, float fov, float near_plane, float far_plane, bool rightHanded);
+	mat4 perspective(float width, float height, float fov, bool leftHanded);
+	mat4 perspective(float width, float height, float fov, float near_plane, float far_plane, bool leftHanded);
 
 	mat4 inverse(const mat4 * src, mat4 * dest);
 

@@ -55,13 +55,13 @@ namespace glmath {
 
 	//========================= VECTOR FUNCS ==========================
 
-	double vec2::length() const {
+	float vec2::length() const {
 		return sqrt(pow(this->x, 2) + pow(this->y, 2));
 	}
-	double vec3::length() const {
+	float vec3::length() const {
 		return sqrt(pow(this->x, 2) + pow(this->y, 2) + pow(this->z, 2));
 	}
-	double vec4::length() const {
+	float vec4::length() const {
 		return sqrt(pow(this->x, 2) + pow(this->y, 2) + pow(this->z, 2) + pow(this->w, 2));
 	}
 
@@ -140,21 +140,21 @@ namespace glmath {
 					left.x * right.y - left.y * right.x);
 	}
 
-	double dot(const vec2& left, const vec2& right) {
+	float dot(const vec2& left, const vec2& right) {
 		return left.x * right.x + left.y * right.y;
 	}
-	double dot(const vec3& left, const vec3& right) {
+	float dot(const vec3& left, const vec3& right) {
 		return left.x * right.x + left.y * right.y + left.z * right.z;
 	}
-	double dot(const vec4& left, const vec4& right) {
+	float dot(const vec4& left, const vec4& right) {
 		return left.x * right.x + left.y * right.y + left.z * right.z + left.w * right.w;
 	}
 
-	double angle(const vec2& left, const vec2& right) {
+	float angle(const vec2& left, const vec2& right) {
 		return glmath::angle(vec3(left.x, left.y, 0), vec3(right.x, right.y, 0));
 	}
-	double angle(const vec3& left, const vec3& right) {
-		return acos(dot(left, right) / (left.length() * right.length()));
+	float angle(const vec3& left, const vec3& right) {
+		return (float) acos(dot(left, right) / (left.length() * right.length()));
 	}
 
 	//========================== OPERATORS ============================
@@ -173,13 +173,13 @@ namespace glmath {
 		this->x -= right.x;
 		this->y -= right.y;
 	}
-	vec2 operator*(const double& left, const vec2& right) {
+	vec2 operator*(const float& left, const vec2& right) {
 		return vec2(left * right.x, left * right.y);
 	}
-	vec2 operator*(const vec2& left, const double& right) {
+	vec2 operator*(const vec2& left, const float& right) {
 		return vec2(right * left.x, right * left.y);
 	}
-	vec2 operator/(const vec2& left, const double& right) {
+	vec2 operator/(const vec2& left, const float& right) {
 		return vec2(left.x / right, left.y / right);
 	}
 	std::ostream& operator<<(std::ostream &left, const vec2 &right) {
@@ -205,13 +205,13 @@ namespace glmath {
 		this->y -= right.y;
 		this->z -= right.z;
 	}
-	vec3 operator*(const double& left, const vec3& right) {
+	vec3 operator*(const float& left, const vec3& right) {
 		return vec3(left * right.x, left * right.y, left * right.z);
 	}
-	vec3 operator*(const vec3& left, const double& right) {
+	vec3 operator*(const vec3& left, const float& right) {
 		return vec3(right * left.x, right * left.y, right * left.z);
 	}
-	vec3 operator/(const vec3& left, const double& right) {
+	vec3 operator/(const vec3& left, const float& right) {
 		return vec3(left.x / right, left.y / right, left.z / right);
 	}
 	std::ostream& operator<<(std::ostream &left, const vec3 &right) {
@@ -240,13 +240,13 @@ namespace glmath {
 		this->z -= right.z;
 		this->w -= right.w;
 	}
-	vec4 operator*(const double& left, const vec4& right) {
+	vec4 operator*(const float& left, const vec4& right) {
 		return vec4(left * right.x, left * right.y, left * right.z, left * right.w);
 	}
-	vec4 operator*(const vec4& left, const double& right) {
+	vec4 operator*(const vec4& left, const float& right) {
 		return vec4(right * left.x, right * left.y, right * left.z, right * left.w);
 	}
-	vec4 operator/(const vec4& left, const double& right) {
+	vec4 operator/(const vec4& left, const float& right) {
 		return vec4(left.x / right, left.y / right, left.z / right, left.w / right);
 	}
 	std::ostream& operator<<(std::ostream &left, const vec4 &right) {

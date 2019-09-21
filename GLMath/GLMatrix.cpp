@@ -176,10 +176,10 @@ namespace glmath {
 		return *dest;
 	}
 
-	mat4 perspective(float width, float height, float fov, bool rightHanded){
-		return perspective(width, height, fov, NEAR_PLANE, FAR_PLANE, rightHanded);
+	mat4 perspective(float width, float height, float fov, bool leftHanded){
+		return perspective(width, height, fov, NEAR_PLANE, FAR_PLANE, leftHanded);
 	}
-	mat4 perspective(float width, float height, float fov, float near_plane, float far_plane, bool rightHanded){
+	mat4 perspective(float width, float height, float fov, float near_plane, float far_plane, bool leftHanded){
 		float aspectRatio = width / height;
 		float y_scale = (float)((1.0f / tan(rad(fov / 2.0f))) * aspectRatio);
 		float x_scale = y_scale / aspectRatio;
@@ -189,11 +189,11 @@ namespace glmath {
 		projectionMatrix.m00 = x_scale;
 		projectionMatrix.m11 = y_scale;
 		projectionMatrix.m22 = ((far_plane + near_plane) / frustum_length);
-		if (rightHanded)
+		if (leftHanded)
 			projectionMatrix.m22 *= -1;
-		projectionMatrix.m23 = rightHanded ? -1 : 1;
+		projectionMatrix.m23 = leftHanded ? -1.0f : 1.0f;
 		projectionMatrix.m32 = -((near_plane * far_plane) / frustum_length);
-		if (rightHanded)
+		if (leftHanded)
 			projectionMatrix.m32 *= 2;
 		projectionMatrix.m33 = 0;
 

@@ -18,7 +18,7 @@ namespace glmath {
 		struct { float s, t; };
 		float v[2];
 
-		double length() const;
+		float length() const;
 		
 		vec2 normalize();
 		vec2 normalize(vec2 * dest);
@@ -29,10 +29,10 @@ namespace glmath {
 		void operator+=(const vec2& right);
 		void operator-=(const vec2& right);
 
-		vec2 friend operator*(const double& left, const vec2& right);
-		vec2 friend operator*(const vec2& left, const double& right);
+		vec2 friend operator*(const float& left, const vec2& right);
+		vec2 friend operator*(const vec2& left, const float& right);
 
-		vec2 friend operator/(const vec2& left, const double& right);
+		vec2 friend operator/(const vec2& left, const float& right);
 		
 		friend std::ostream& operator<<(std::ostream &left, const vec2& right);
 	};
@@ -46,7 +46,7 @@ namespace glmath {
 		struct { float r, g, b; };
 		float v[3];
 	
-		double length() const;
+		float length() const;
 
 		vec3 normalize();
 		vec3 normalize(vec3 * dest);
@@ -57,10 +57,10 @@ namespace glmath {
 		void operator+=(const vec3& right);
 		void operator-=(const vec3& right);
 
-		vec3 friend operator*(const double& left, const vec3& right);
-		vec3 friend operator*(const vec3& left, const double& right);
+		vec3 friend operator*(const float& left, const vec3& right);
+		vec3 friend operator*(const vec3& left, const float& right);
 
-		vec3 friend operator/(const vec3& left, const double& right);
+		vec3 friend operator/(const vec3& left, const float& right);
 
 		friend std::ostream& operator<<(std::ostream &left, const vec3& right);
 	};
@@ -74,7 +74,7 @@ namespace glmath {
 		struct { float r, g, b, a; };
 		float v[4];
 
-		double length() const;
+		float length() const;
 
 		vec4 normalize();
 		vec4 normalize(vec4 * dest);
@@ -85,10 +85,10 @@ namespace glmath {
 		void operator+=(const vec4& right);
 		void operator-=(const vec4& right);
 
-		vec4 friend operator*(const double& left, const vec4& right);
-		vec4 friend operator*(const vec4& left, const double& right);
+		vec4 friend operator*(const float& left, const vec4& right);
+		vec4 friend operator*(const vec4& left, const float& right);
 
-		vec4 friend operator/(const vec4& left, const double& right);
+		vec4 friend operator/(const vec4& left, const float& right);
 
 		friend std::ostream& operator<<(std::ostream &left, const vec4& right);
 	};
@@ -102,11 +102,11 @@ namespace glmath {
 	vec3 cross(const vec2& left, const vec2& right);
 	vec3 cross(const vec3& left, const vec3& right);
 	
-	double dot(const vec2& left, const vec2& right);
-	double dot(const vec3& left, const vec3& right);
-	double dot(const vec4& left, const vec4& right);
+	float dot(const vec2& left, const vec2& right);
+	float dot(const vec3& left, const vec3& right);
+	float dot(const vec4& left, const vec4& right);
 
-	double angle(const vec2& left, const vec2& right);
-	double angle(const vec3& left, const vec3& right);
+	float angle(const vec2& left, const vec2& right);
+	float angle(const vec3& left, const vec3& right);
 
 }
